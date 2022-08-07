@@ -1,0 +1,5 @@
+#!/bin/sh
+
+polybar --config=~/.config/polybar/bspwm-polybar/left-bar.ini &
+polybar --config=~/.config/polybar/bspwm-polybar/right-bar.ini &
+polybar --config=~/.config/polybar/bspwm-polybar/middle-bar.ini

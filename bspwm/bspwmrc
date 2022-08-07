@@ -1,0 +1,54 @@
+#! /bin/sh
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+
+xrandr --output eDP-1 --mode 2560x1440 --rate 60
+
+#some of my others screens
+
+# xrandr --output HDMI-1 --mode 1920x1080 --rate 144 --left-of eDP-1
+# xrandr --output HDMI-1 --mode 1680x1050 --rate 60 --left-of eDP-1
+
+bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10 &
+
+# for my second monitor
+# bspc monitor HDMI-1 -d I II
+
+bspc config border_width         2
+bspc config window_gap          30
+bspc config focused_border_color "#eb7d0a"
+bspc config active_border_color "#0b1e24"
+bspc config normal_border_color "#0b1e24"
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# autostart
+
+picom --config /home/arnaud/.config/bspwm/picom-conf.conf --experimental-backends &&
+plank &
+tint2 &
+dunst &
+nitrogen --restore &
+# wallset --video /home/arnaud/Desktop/arnaud/video/newyork-night.mp4
+if type "xrandr"; then
+  for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    #MONITOR=$m polybar -c /home/arnaud/.config/polybar/bspwm-bar.ini &
+    MONITOR=$m ~/.config/polybar/bspwm-polybar/bspwm-polybar &
+  done
+else
+  polybar --reload -c /home/arnaud/.config/polybar/bspwm-bar.ini &
+fi
+
+# check out my nightly-flask repo at https://github.com/nobody48sheldor/nightly-flask
+# export FLASK_APP=/home/arnaud/Desktop/arnaud/code/web/nightly-flask/flask-local.py && flask run -p 6900 &
+
+blur-background-check &
+# polybar -c /home/arnaud/.config/polybar/bspwm-bar.ini &
