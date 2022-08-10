@@ -41,7 +41,7 @@ nitrogen --restore &
 if type "xrandr"; then
   for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
     #MONITOR=$m polybar -c /home/arnaud/.config/polybar/bspwm-bar.ini &
-    MONITOR=$m ~/.config/polybar/bspwm-polybar/bspwm-polybar &
+    MONITOR=$m ~/.config/polybar/bspwm-polybar &
   done
 else
   polybar --reload -c /home/arnaud/.config/polybar/bspwm-bar.ini &
