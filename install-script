@@ -22,7 +22,7 @@ fi
 echo ""
 echo "-\-     installing dependancies..."
 echo ""
-# sudo $package bspwm sxhkd tint2 polybar alacritty
+sudo $package bspwm sxhkd tint2 polybar alacritty
 
 # wget configurations files
 
@@ -40,15 +40,15 @@ fi
 path="/home/$(whoami)/.config"
 
 
-#BSPWM and PICOM
+# BSPWM and PICOM
 
 if [[ $(ls $path/bspwm) ]]
 then
   echo "\   BSPWM config detected !"
   echo ""
   echo "\   copying old one to 'bspwm-old'..."
-  #mv $path/bspwm PATH/bspwm-old
-  #mkdir $path/bspwm;
+  mv $path/bspwm PATH/bspwm-old
+  mkdir $path/bspwm;
   echo "-   Done ✔"
 else
   echo "-   making a bspwm config dir...";
@@ -59,10 +59,10 @@ fi
 echo ""
 echo "-   getting bspwmrc and picom-conf...";
 echo ""
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/bspwm/bspwmrc" && mv bspwmrc $path/bspwm
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/bspwm/bspwmrc" && mv bspwmrc $path/bspwm
 echo ""
 echo "-   Done ✔"
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/bspwm/picom-conf.conf" && mv picom-conf.conf $path/bspwm
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/bspwm/picom-conf.conf" && mv picom-conf.conf $path/bspwm
 echo ""
 echo "-   Done ✔"
 
@@ -74,8 +74,8 @@ then
   echo "\   sxhkd config detected !"
   echo ""
   echo "\   copying old one to 'sxhkd-old'..."
-  #mv $path/sxhkd PATH/sxhkd-old
-  #mkdir $path/sxhkd;
+  mv $path/sxhkd PATH/sxhkd-old
+  mkdir $path/sxhkd;
   echo "-   Done ✔"
 else
   echo "-   making a sxhkd config dir...";
@@ -86,7 +86,7 @@ fi
 echo ""
 echo "-   getting sxhkdrc...";
 echo ""
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/sxhkd/sxhkdrc" && mv sxhkdrc $path/sxhkd
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/sxhkd/sxhkdrc" && mv sxhkdrc $path/sxhkd
 echo ""
 echo "-   Done ✔"
 
@@ -98,8 +98,8 @@ then
   echo "\   dunst config detected !"
   echo ""
   echo "\   copying old one to 'dunst-old'..."
-  #mv $path/dunst PATH/dunst-old
-  #mkdir $path/dunst;
+  mv $path/dunst PATH/dunst-old
+  mkdir $path/dunst;
   echo "-   Done ✔"
 else
   echo "-   making a dunst config dir...";
@@ -110,20 +110,20 @@ fi
 echo ""
 echo "-   getting dunstrc...";
 echo ""
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/dunst/dunstrc" && mv dunst $path/dunst
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/dunst/dunstrc" && mv dunst $path/dunst
 echo ""
 echo "-   Done ✔"
 
 
-# TINt2
+# TINT2
 
 if [[ $(ls $path/tint2) ]]
 then
   echo "\   tint2 config detected !"
   echo ""
   echo "\   copying old one to 'tint2-old'..."
-  #mv $path/tint2 PATH/tint2-old
-  #mkdir $path/tint2;
+  mv $path/tint2 PATH/tint2-old
+  mkdir $path/tint2;
   echo "-   Done ✔"
 else
   echo "-   making a tint2 config dir...";
@@ -134,7 +134,7 @@ fi
 echo ""
 echo "-   getting titn2rc...";
 echo ""
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/tint2/tint2rc" && mv tint2rc $path/tint2
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/tint2/tint2rc" && mv tint2rc $path/tint2
 echo ""
 echo "-   Done ✔"
 
@@ -146,8 +146,8 @@ then
   echo "\   polybar config detected !"
   echo ""
   echo "\   copying old one to 'polybar-old'..."
-  #mv $path/polybar PATH/polybar-old
-  #mkdir $path/polybar;
+  mv $path/polybar PATH/polybar-old
+  mkdir $path/polybar;
   echo "-   Done ✔"
 else
   echo "-   making a polybar config dir...";
@@ -158,10 +158,10 @@ fi
 echo ""
 echo "-   getting polybar config files...";
 echo ""
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/bspwm-polybar" && chmod +x bspwm-polybar &&mv bspwm-polybar $path/polybar
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/left-bar.ini" && mv left-bar.ini $path/polybar
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/right-bar.ini" && mv right-bar.ini $path/polybar
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/middle-bar.ini" && mv middle-bar.ini $path/polybar
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/bspwm-polybar" && chmod +x bspwm-polybar &&mv bspwm-polybar $path/polybar
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/left-bar.ini" && mv left-bar.ini $path/polybar
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/right-bar.ini" && mv right-bar.ini $path/polybar
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/polybar/middle-bar.ini" && mv middle-bar.ini $path/polybar
 echo ""
 echo "-   Done ✔"
 
@@ -172,8 +172,8 @@ then
   echo "\   rofi config detected !"
   echo ""
   echo "\   copying old one to 'rofi-old'..."
-  #mv $path/rofi PATH/rofi-old
-  #mkdir $path/rofi;
+  mv $path/rofi PATH/rofi-old
+  mkdir $path/rofi;
   echo "-   Done ✔"
 else
   echo "-   making a rofi config dir...";
@@ -184,51 +184,56 @@ fi
 echo ""
 echo "-   getting rofi config files...";
 echo ""
-# mkdir $path/rofi/applets
+mkdir $path/rofi/applets
 
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/apps.rasi" && mv apps.rasi $path/rofi/applets
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/colors.rasi" && mv colors.rasi $path/rofi/applets
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/menu.sh" && mv menu.sh $path/rofi/applets
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/nobody-menu.sh" && mv nobody-menu.sh $path/rofi/applets
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/apps.rasi" && mv apps.rasi $path/rofi/applets
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/colors.rasi" && mv colors.rasi $path/rofi/applets
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/menu.sh" && mv menu.sh $path/rofi/applets
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/nobody-menu.sh" && mv nobody-menu.sh $path/rofi/applets
 
-# mkdir $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/apps.sh" && mv apps.sh $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/backlight.sh" && mv backlight.sh $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/colors.rasi" && mv colors.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/confirm.rasi" && mv confirm.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/eight.rasi" && mv eight.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/five.rasi" && mv five.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/four-button.rasi" && mv four-button.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/four-power.rasi" && mv four-power.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/four.rasi" && mv four.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/message.rasi" && mv message.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/mpd.sh" && mv mpd.sh $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/powermenu-button.sh" && mv powermenu-button.sh $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/quicklinks.sh" && mv quicklinks.sh $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/screenshot.sh" && mv screenshot.sh $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/seven.rasi" && mv seven.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/six.rasi" && mv six.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/three.rasi" && mv three.rasi $path/rofi/applets/android
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/volume.sh" && mv volume.sh $path/rofi/applets/android
+mkdir $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/apps.sh" && mv apps.sh $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/backlight.sh" && mv backlight.sh $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/colors.rasi" && mv colors.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/confirm.rasi" && mv confirm.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/eight.rasi" && mv eight.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/five.rasi" && mv five.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/four-button.rasi" && mv four-button.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/four-power.rasi" && mv four-power.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/four.rasi" && mv four.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/message.rasi" && mv message.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/mpd.sh" && mv mpd.sh $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/powermenu-button.sh" && mv powermenu-button.sh $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/quicklinks.sh" && mv quicklinks.sh $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/screenshot.sh" && mv screenshot.sh $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/seven.rasi" && mv seven.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/six.rasi" && mv six.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/three.rasi" && mv three.rasi $path/rofi/applets/android
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/android/volume.sh" && mv volume.sh $path/rofi/applets/android
 
-# mkdir $path/rofi/applets/styles
+mkdir $path/rofi/applets/styles
 
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/styles/colors.rasi" && mv colors.rasi $path/rofi/applets/styles
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/styles/material-dark/bspwm2.rasi" && mv bspwm2.rasi $path/rofi/applets/styles
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/styles/colors.rasi" && mv colors.rasi $path/rofi/applets/styles
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/applets/styles/material-dark/bspwm2.rasi" && mv bspwm2.rasi $path/rofi/applets/styles
 
-# mkdir $path/rofi/launchers
-# mkdir $path/rofi/launchers/colorful
+mkdir $path/rofi/launchers
+mkdir $path/rofi/launchers/colorful
 
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/colors.rasi" && mv colors.rasi $path/rofi/applets/launchers/colorful
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/launcher.sh" && mv launcher.sh $path/rofi/applets/launchers/colorful
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_1.rasi" && mv style_1.rasi $path/rofi/applets/launchers/colorful
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_1-dropdown.rasi" && mv style_1-dropdown.rasi $path/rofi/applets/launchers/colorful
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_2-wifi.rasi" && mv style_2-wifi.rasi $path/rofi/applets/launchers/colorful
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_5-launcher.rasi" && mv style_5-launcher.rasi $path/rofi/applets/launchers/colorful
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/colors.rasi" && mv colors.rasi $path/rofi/applets/launchers/colorful
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/launcher.sh" && mv launcher.sh $path/rofi/applets/launchers/colorful
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_1.rasi" && mv style_1.rasi $path/rofi/applets/launchers/colorful
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_1-dropdown.rasi" && mv style_1-dropdown.rasi $path/rofi/applets/launchers/colorful
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_2-wifi.rasi" && mv style_2-wifi.rasi $path/rofi/applets/launchers/colorful
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/launchers/colorful/style_5-launcher.rasi" && mv style_5-launcher.rasi $path/rofi/applets/launchers/colorful
 
-# wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/config.rasi" && mv config.rasi $path/rofi
+wget "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/rofi/config.rasi" && mv config.rasi $path/rofi
 
 echo ""
 echo "-   Done ✔"
 
+
+# blur background
+
 echo ""
+
+
