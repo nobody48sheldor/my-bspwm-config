@@ -11,7 +11,7 @@ I use an AZERTY (french) layout
 ### One liner
 
 ```
-curl "" | sh && rm install-script
+curl "https://raw.githubusercontent.com/nobody48sheldor/my-bspwm-config/main/install-script" | sh && rm install-script
 ```
 
 ### From source
